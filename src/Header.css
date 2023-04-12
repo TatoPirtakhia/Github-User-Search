@@ -1,0 +1,62 @@
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.upperDiv{
+    display: flex;
+    align-items: center;
+    gap: 123px;
+    background-color: #FEFEFE;
+}
+.title{
+    font-size: 26px;
+    color: #222731;
+}
+.mode{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.datk_title{
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    color: rgba(75, 106, 155, 1);
+}
+.icons{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.Gihub{
+    position: absolute;
+    left: 1px;
+    top:1px;
+ 
+}
+.bottomDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 15px;
+    background-color: #FEFEFE;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    width: 327px;
+    height: 60px;
+}
+input{
+    color: #4B6A9B;
+    font-size: 13px;
+    width: 184px;
+    border: none;
+    outline: none;
+}
+button{
+    background-color: rgba(0, 121, 255, 1);
+    border-radius: 10px;
+    width: 84px;
+    height: 46px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+}
