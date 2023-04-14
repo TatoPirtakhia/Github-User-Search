@@ -2,23 +2,33 @@ import users from "./users";
 import "./Header.css";
 import { useState } from "react";
 function Header(props) {
-  const [value,setValue] = useState('')
+  const [value, setValue] = useState("");
+  const [result, setResult] = useState(false);
+  const [window2,setWindow2] = useState(window.innerWidth)
   let githubuser;
   async function getuser(user) {
     githubuser = await users(user);
-    props.setUser(githubuser);
-    setValue('')
+    if (!githubuser) {
+      setResult(true)
+      setTimeout(() => {
+        setResult(false)
+      }, 3000);
+      setValue("");
+    } else {
+      
+      props.setUser(githubuser);
+      setValue("");
+    }
   }
 
-  const shearchUser =  () => {
-     props.setInputValue(value);
+  const shearchUser = () => {
+    props.setInputValue(value);
     if (value !== "") {
       getuser(value);
     }
   };
   const keyPress = (event) => {
-    setValue(event.target.value)
-    
+    setValue(event.target.value);
   };
   return (
     <header>
@@ -39,6 +49,7 @@ function Header(props) {
               <svg
                 width="20"
                 height="20"
+                // className={props.dark?"darkIcons":"k"}
                 onClick={props.changeColorMode}
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -49,7 +60,7 @@ function Header(props) {
             ) : (
               <svg
                 width="20"
-                className="moon"
+                className={props.dark ? "k" : "darkIcons2"}
                 onClick={props.changeColorMode}
                 height="20"
                 xmlns="http://www.w3.org/2000/svg"
@@ -65,6 +76,7 @@ function Header(props) {
         </div>
       </div>
       <div className={props.dark ? "dark_bottomDiv" : "bottomDiv"}>
+        <p className={result?"active spaceBold":"disable"}>No results</p>
         <div className="icons">
           <svg height="24" width="25" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -73,9 +85,9 @@ function Header(props) {
             />
           </svg>
           <svg height="19" viewBox="0 0 16 16" width="19" className="Gihub">
-            <path 
-            d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
-            fill={props.dark? "white": ''}
+            <path
+              d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"
+              fill={props.dark ? "white" : ""}
             />
           </svg>
         </div>
@@ -86,8 +98,8 @@ function Header(props) {
           onChange={keyPress}
           placeholder="Search GitHub username…"
         />
-        <button className="spaceBold" onClick={shearchUser}>
-          Search
+        <button className={result && window2?"redbutton spaceBold":"button spaceBold"} onClick={shearchUser}>
+          {result && window2<768?"No results":"Search"}
         </button>
       </div>
     </header>

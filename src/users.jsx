@@ -5,7 +5,8 @@ async function users(user){
     const getUser = response.data
     return getUser
  } catch (error) {
-    console.log(error)
+    // console.log(error)
+    return false
  }
 }
 export default users

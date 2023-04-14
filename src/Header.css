@@ -86,11 +86,100 @@ header {
 .dark_input::placeholder {
   color: #ffffff;
 }
-button {
+.button {
   background-color: rgba(0, 121, 255, 1);
   border-radius: 10px;
   width: 84px;
   height: 46px;
   border: none;
   color: rgba(255, 255, 255, 1);
+}
+.redbutton {
+  background-color: rgba(0, 121, 255, 1);
+  border-radius: 10px;
+  width: 84px;
+  height: 46px;
+  border: none;
+  color: rgba(247, 70, 70, 1);
+}
+.darkIcons {
+  transform: rotate(360deg);
+  transition: all 0.5s ease-in-out;
+}
+.darkIcons2 {
+  transform: rotate(360deg);
+  transition: all 0.5s ease-in-out;
+}
+.active{
+  display: none;
+}
+.disable{
+  display: none;
+}
+@media (min-width: 768px) {
+  .active{
+    display: block;
+    position: absolute;
+    left:360px;
+    font-size: 15px;
+    color: rgba(247, 70, 70, 1);
+  }
+  .disable{
+    display: none;
+  }
+  .upperDiv {
+    gap: 360px;
+  }
+  .bottomDiv {
+    position: relative;
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
+    border-radius: 15px;
+    background-color: #fefefe;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    width: 573px;
+    height: 69px;
+  }
+  .dark_bottomDiv {
+    padding-left: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
+    border-radius: 15px;
+    background-color: #1e2a47;
+    width: 573px;
+    height: 69px;
+  }
+  .input {
+    margin-left: 23px;
+    margin-right: 123px;
+    color: #4b6a9b;
+    width: 254px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+  }
+  .dark_input {
+    background-color: #1e2a47;
+    margin-left: 23px;
+    margin-right: 123px;
+    color: #ffffff;
+    width: 254px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+  }
+  button {
+    background-color: rgba(0, 121, 255, 1);
+    border-radius: 10px;
+    width: 106px;
+    height: 50px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+  }
 }
