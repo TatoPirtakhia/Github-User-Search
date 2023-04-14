@@ -98,7 +98,7 @@ function Header(props) {
           onChange={keyPress}
           placeholder="Search GitHub username…"
         />
-        <button className={result && window2?"redbutton spaceBold":"button spaceBold"} onClick={shearchUser}>
+        <button className={result && window2<768?"redbutton spaceBold":"button spaceBold"} onClick={shearchUser}>
           {result && window2<768?"No results":"Search"}
         </button>
       </div>

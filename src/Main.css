@@ -36,7 +36,6 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 6px;
 }
 .name {
   font-size: 16px;
@@ -212,11 +211,10 @@
     height: 85px;
     width: 493px;
     border-radius: 18px;
-    justify-content: space-around;
   }
   .dark_folowers {
     margin-top: 32px;
-    display: flex;
+
     height: 85px;
     width: 493px;
   }
@@ -249,7 +247,6 @@
     width: 50%;
     display: flex;
     align-items: center;
-    
   }
   .notAvilaible {
     font-size: 15px;
@@ -263,4 +260,118 @@
   .dark_footer_title {
     font-size: 15px;
   }
+}
+
+@media (min-width: 1440px) {
+  .main {
+    width: 730px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-top: 24px;
+    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+    border-radius: 15px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* margin-bottom: 20px; */
+  }
+  .dark_main {
+    background-color: #1e2a47;
+    width: 730px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-top: 24px;
+    border-radius: 15px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* margin-bottom:20px; */
+  }
+  .image_info {
+    display: flex;
+    align-items: flex-start;
+    width: 730px;
+    padding-left: 48px;
+    padding-top: 48px;
+    gap: 40px;
+    position: relative;
+  }
+  .widthCHildren {
+    width: 50%;
+    margin-bottom: 6px;
+  }
+  .info {
+    width: 480px;
+  }
+  .avatar {
+    width: 117px;
+    height: 117px;
+  }
+
+  .name {
+    font-size: 26px;
+  }
+  .dark_name {
+    font-size: 26px;
+  }
+  .username {
+    font-size: 16px;
+  }
+  .date {
+    font-size: 15px;
+    position: absolute;
+    left: 516px;
+    top: 52px;
+  }
+  .dark_date {
+    font-size: 15px;
+    position: absolute;
+    left: 516px;
+    top: 52px;
+  }
+  .about {
+    margin-left: 160px;
+    margin-top: -30px;
+    width: 480px;
+    font-size: 15px;
+  }
+  .dark_about {
+    margin-left: 160px;
+    margin-top: -30px;
+    width: 480px;
+    font-size: 15px;
+  }
+  .folowers {
+    padding-top: 19px;
+    margin-top: 32px;
+    display: flex;
+    height: 85px;
+    width: 480px;
+    border-radius: 18px;
+    justify-content: space-around;
+    margin-left: 150px;
+  }
+  .dark_folowers {
+    margin-top: 32px;
+    display: flex;
+    height: 85px;
+    width: 480px;
+    margin-left: 150px;
+  }
+
+  .footer {
+    margin-top: 37px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-left: 150px;
+    width: 480px;
+  }
+  .link:hover{
+    text-decoration: underline;
+  }
+
+
 }

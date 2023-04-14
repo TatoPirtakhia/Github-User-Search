@@ -11,12 +11,12 @@ function Main(props) {
           height="70"
         />
         <div className="info">
-          <h1 className={props.dark ? "dark_name spaceBold" : "name spaceBold"}>
+          <h1 className={props.dark ? "dark_name spaceBold widthCHildren" : "widthCHildren name spaceBold"}>
             {props.user.name}
           </h1>
-          <p className="username spaceSmall">{`@${props.user.login}`}</p>
+          <p className="username spaceSmall widthCHildren">{`@${props.user.login}`}</p>
           <p
-            className={props.dark ? "dark_date spaceSmall" : "date spaceSmall"}
+            className={props.dark ? "dark_date spaceSmall widthCHildren" : "widthCHildren date spaceSmall"}
           >{`Joined ${moment(props.user.created_at).format(
             "DD MMM, YYYY"
           )}`}</p>
@@ -25,7 +25,7 @@ function Main(props) {
       <p className={props.dark ? "dark_about spaceSmall" : "about spaceSmall"}>
         {props.user.bio != null && props.user.bio !== ""
           ? props.user.bio
-          : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros."}
+          : "This profile has no bio"}
       </p>
       <div className={props.dark ? "dark_folowers" : "folowers"}>
         <div className="box">
@@ -118,8 +118,8 @@ function Main(props) {
           <a
             className={
               props.user.blog != null && props.user.blog !== ""
-                ?props.dark ?"dark_footer_title spaceSmall": "spaceSmall footer_title"
-                :props.dark? "dark_avilable spaceSmall": "notAvilaible spaceSmall"
+                ?props.dark ?"dark_footer_title link spaceSmall": "spaceSmall link footer_title"
+                :props.dark? "dark_avilable  spaceSmall": "notAvilaible link spaceSmall"
             }
             href={
               props.user.blog != null && props.user.blog !== ""
