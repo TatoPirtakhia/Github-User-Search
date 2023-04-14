@@ -49,7 +49,7 @@ function Header(props) {
               <svg
                 width="20"
                 height="20"
-                // className={props.dark?"darkIcons":"k"}
+                className={props.dark?"darkIcons":""}
                 onClick={props.changeColorMode}
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -60,7 +60,7 @@ function Header(props) {
             ) : (
               <svg
                 width="20"
-                className={props.dark ? "k" : "darkIcons2"}
+                className={props.dark ? "" : "darkI"}
                 onClick={props.changeColorMode}
                 height="20"
                 xmlns="http://www.w3.org/2000/svg"

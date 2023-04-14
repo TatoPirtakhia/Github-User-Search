@@ -103,13 +103,29 @@ header {
   color: rgba(247, 70, 70, 1);
 }
 .darkIcons {
-  transform: rotate(360deg);
-  transition: all 0.5s ease-in-out;
+  animation: rotate 0.7s linear ;
 }
-.darkIcons2 {
-  transform: rotate(360deg);
-  transition: all 0.5s ease-in-out;
+.darkI {
+  animation: rotatee 0.7s linear ;
 }
+@keyframes rotatee {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+
 .active{
   display: none;
 }
